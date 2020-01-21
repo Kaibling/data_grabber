@@ -4,12 +4,14 @@ import dblayer
 import train_data
 import utils
 import grab_utils
+import shutil
 
+shutil.rmtree('train_1')
 # Init logger
 logger = logging.getLogger('grabber')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(name)s - [%(threadName)s] - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 # End Init logger
@@ -38,7 +40,7 @@ generate_data = True
 
 if generate_data is False:
     subreddit_names = ["cats","catpics","catpictures","DogPics","dogpictures"]
-    post_amount = 5
+    post_amount = 700
     
     for subreddit_name in subreddit_names:
         reddit_bot.grab_subreddit(subreddit_name,post_amount)
@@ -46,7 +48,7 @@ if generate_data is False:
 
 if generate_data:
     tags = dict()
-    tags["dog"] = ["DogPics",]
+    #tags["dog"] = ["DogPics",]
     tags["cats"] = ["catpics",]
 
     #tags = dict()

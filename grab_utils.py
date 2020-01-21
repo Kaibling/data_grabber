@@ -1,8 +1,8 @@
 import logging
 import os
 
-from urllib.request import urlopen, Request
-import cv2
+#from urllib.request import urlopen, Request
+
 from requests import Session
 import praw
 import dblayer
