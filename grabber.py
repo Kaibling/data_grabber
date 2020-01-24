@@ -9,23 +9,12 @@ import shutil
 shutil.rmtree('train_1')
 # Init logger
 logger = logging.getLogger('grabber')
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 ch = logging.StreamHandler()
 formatter = logging.Formatter('%(asctime)s - %(name)s - [%(threadName)s] - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 # End Init logger
-
-
-#format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-#logging.basicConfig(format=format, level=logging.INFO,datefmt="%H:%M:%S")
-
-#format = "%(asctime)s: %(message)s"
-#logging.basicConfig(format=format, level=logging.INFO,datefmt="%H:%M:%S")
-#logging.info("Main    : before creating thread")
-
-start_time = time.time()
-
 
 logger.info('Init wrapper ...')
 reddit_config = utils.config_file_parser()['reddit'][0]
