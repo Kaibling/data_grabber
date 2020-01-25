@@ -6,7 +6,6 @@ import utils
 import grab_utils
 import shutil
 
-shutil.rmtree('train_1')
 # Init logger
 logger = logging.getLogger('grabber')
 logger.setLevel(logging.INFO)
